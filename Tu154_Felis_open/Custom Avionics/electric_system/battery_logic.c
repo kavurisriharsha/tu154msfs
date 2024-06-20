@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <math.h>
+#include <elec.h>
 
 #define BAT_CURR_COEF 2
 
@@ -19,7 +20,7 @@ int bat_kz;
 float bus_volt;
 float cockpit_temp;
 float frame_time;
-float sim_bat_on;
+int sim_bat_on;
 
 // setting the initial battery voltage with some random offset between 0 and 1.5 volts
 double bat_capacity = 25 - (rand() % 150) / 100.0;
