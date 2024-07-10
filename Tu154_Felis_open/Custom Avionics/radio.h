@@ -26,4 +26,5 @@ typedef struct {
     float nav2_pow_cc; // Current consumption by KursMP
     float radar_cc; // Current consumption by radar Groza
     float rsbn_cc; // Current consumption by RSBN
+    
 } radio_t;
