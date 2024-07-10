@@ -1,5 +1,5 @@
 typedef struct {
-    int  bat_on_bus; // battery connected to the network
+    /*int  bat_on_bus; // battery connected to the network
     int  bat_source; // battery is the source
     int  bat_fail; // battery failure
     int  bat_kz; // thermal runaway
@@ -120,6 +120,104 @@ typedef struct {
     float auasp_pow27_cc;
     float auasp_pow115_cc;
     float rv5_left_cc;
-    float rv5_right_cc;
+    float rv5_right_cc;*/
+
+    int vu_res_to_L; // резервное ВУ подключено на лев сеть
+    int vu_res_to_R; // резервное ВУ подключено на прав сеть
+    int bus27_source_left; // источник питания левой сети. 0 - ничего. 1 - ВУ1, 2 - ВУрезерв, 3 - батареи 1 и 3, 4- бат 1, 5 - бат 2
+    int bus27_source_right; // источник питания правой сети. 0 - ничего. 1 - ВУ2, 2 - ВУрезерв, 3 - батареи 1 и 3, 4- бат 1, 5 - бат 2
+    int bat_is_source_1; // батарея является источником
+    int bat_is_source_2; // батарея является источником
+    int bat_is_source_3; // батарея является источником
+    int bat_is_source_4; // батарея является источником
+    int bus_connected; // сети соеденены
+    int bus36_tr1_work; // трансформатор 1 работает
+    int bus36_tr2_work; // трансформатор 2 работает
+    int bus36_pts1_work; // ПТС250 1 работает
+    int bus36_pts2_work; // ПТС250 2 работает
+    int bus36_src_L; // источник левой сети. 0 = ТР1, 1 = ТР2
+    int bus36_src_R; // источник правой сети. 0 = ТР2, 1 = ТР1
+    int gen1_work; // генератор 1 работает
+    int gen2_work; // генератор 2 работает
+    int gen3_work; // генератор 3 работает
+    int gen4_work; // генератор ВСУ работает
+    int gpu_work; // РАП работает
+    int gen1_overload; // генератор 1 перегрузка
+    int gen2_overload; // генератор 2 перегрузка
+    int gen3_overload; // генератор 3 перегрузка
+    int gen4_overload; // генератор ВСУ работает
+    int gpu_overload; // РАП перегрузка
+    int apu_start_seq; // идет процесс запуска ВСУ
+    
+    float bat_volt_1; // напряжение батареи
+    float bat_volt_2; // напряжение батареи
+    float bat_volt_3; // напряжение батареи
+    float bat_volt_4; // напряжение батареи
+    float bat_amp_1; // ток батареи
+    float bat_amp_2; // ток батареи
+    float bat_amp_3; // ток батареи
+    float bat_amp_4; // ток батареи
+    float bat_cc_1; // ток заряда батареи
+    float bat_cc_2; // ток заряда батареи
+    float bat_cc_3; // ток заряда батареи
+    float bat_cc_4; // ток заряда батареи
+    float bat_therm_1; // температура батареи
+    float bat_therm_2; // температура батареи
+    float bat_therm_3; // температура батареи
+    float bat_therm_4; // температура батареи
+    float vu1_volt; // работа ВУ
+    float vu2_volt; // работа ВУ
+    float vu_res_volt; // работа ВУ
+    float vu1_amp; // ток ВУ
+    float vu2_amp; // ток ВУ
+    float vu_res_amp; // ток ВУ
+    float bus27_volt_left; // напряжение левой сети 27
+    float bus27_amp_left; // напряжение левой сети 27
+    float bus27_amp_right; // ток правой сети 27
+    float bus27_volt_right; // ток правой сети 27
+    float bus36_volt_left; // напряжение левой сети 36
+    float bus36_volt_right; // напряжение правой сети 36
+    float bus36_volt_pts250_1; // напряжение сети 36 ПТС 1
+    float bus36_volt_pts250_2; // напряжение сети 36 ПТС 2
+    float bus36_amp_left; // ток левой сети 36
+    float bus36_amp_right; // ток правой сети 36
+    float bus36_amp_pts250_1; // ток ПТС250 сети 36 1
+    float bus36_amp_pts250_2; // ток ПТС250 сети 36 2
+    float gen1_volt; // напряжение на генераторе
+    float gen2_volt; // напряжение на генераторе
+    float gen3_volt; // напряжение на генераторе
+    float gen4_volt; // напряжение на генераторе
+    float gpu_volt; // напряжение на генераторе
+    float bus115_1_volt; // напряжение на сети 115в
+    float bus115_2_volt; // напряжение на сети 115в
+    float bus115_3_volt; // напряжение на сети 115в
+    float bus115_em_1_volt; // напряжение на аварийной сети 115в
+    float bus115_em_2_volt; // напряжение на аварийной сети 115в
+    float bus115_1_amp; // ток в сети 115в
+    float bus115_2_amp; // ток в сети 115в
+    float bus115_3_amp; // ток в сети 115в
+    float bus115_em_1_amp; // ток в сети 115в
+    float bus115_em_2_amp; // ток в сети 115в
+    float gen1_amp; // нагрузка на генератор
+    float gen2_amp; // нагрузка на генератор
+    float gen3_amp; // нагрузка на генератор
+    float gen4_amp; // нагрузка на генератор
+    float gpu_amp; // нагрузка на генератор
+    float apu_start_bus; // напряжение в сети ВСУ
+    float apu_start_cc; // ток стартера ВСУ
+    float apu_burning_fuel; // ток стартера ВСУ
+    float cockpit_light_cc_left; // нагрузка на левую сеть от освещения в кабине
+    float cockpit_light_cc_right; // нагрузка на правую сеть от освещения в кабине
+    float cockpit_light_cc_115; // нагрузка на сеть 115 от освещения в кабине
+    float ext_light_cc_left; // нагрузка на левую сеть от внешнего освещения
+    float ext_light_cc_right; // нагрузка на левую сеть от внешнего освещения
+    float ext_light_cc_115; // нагрузка на левую сеть от внешнего освещения
+    float fuel_pumps_115_1_cc; // нагрузка на сеть 1 от топливных насосов
+    float fuel_pumps_115_3_cc; // нагрузка на сеть 3 от топливных насосов
+    float fuel_pumps_27_cc; // нагрузка на сеть 27в от топливных насосов
+    float auasp_pow27_cc; // ток, потребляемый АУАСП
+    float auasp_pow115_cc; // ток, потребляемый АУАСП
+    float rv5_left_cc; // ток, потребляемый RV-5
+    float rv5_right_cc; // ток, потребляемый RV-5
 
 } elec_t;

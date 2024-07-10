@@ -1,30 +1,27 @@
 typedef struct {
-    int nav1_cs_flag; // Course flag
-    int nav2_cs_flag; // Course flag
-    int nav1_gs_flag; // Glide slope flag
-    int nav2_gs_flag; // Glide slope flag
 
-    float adf_bear_1; // ADF beacon bearing
-    float adf_bear_2; // ADF beacon bearing
-    float vor_bear_1; // VOR beacon bearing
-    float vor_bear_2; // VOR beacon bearing
-    float vor_dme_1; // Distance to VOR
-    float vor_dme_2; // Distance to VOR
-    float nav1_cs; // Course deviation indicator
-    float nav1_gs; // Glide slope deviation
-    float nav2_cs; // Course deviation indicator
-    float nav2_gs; // Glide slope deviation
-
+    int nav1_cs_flag; // курсовой флаг
+    int nav2_cs_flag; // курсовой флаг
+    int nav1_gs_flag; // глиссадный флаг
+    int nav2_gs_flag; // глиссадный флаг
     
-    float vhf1_cc; // Current consumption by the radio station
-    float vhf2_cc; // Current consumption by the radio station
-    
-    float ark15_L_cc; // Current consumption by ARK
-    float ark15_R_cc; // Current consumption by ARK
-    
-    float nav1_pow_cc; // Current consumption by KursMP
-    float nav2_pow_cc; // Current consumption by KursMP
-    float radar_cc; // Current consumption by radar Groza
-    float rsbn_cc; // Current consumption by RSBN
+    float adf_bear_1; // направление на маяк ADF
+    float adf_bear_2; // направление на маяк ADF
+    float vor_bear_1; // направление на маяк VOR
+    float vor_bear_2; // направление на маяк VOR
+    float vor_dme_1; // дистанция к VOR
+    float vor_dme_2; // дистанция к VOR
+    float nav1_cs; // отклонение курсовой планки
+    float nav1_gs; // отклонение глиссадной планки
+    float nav2_cs; // отклонение курсовой планки
+    float nav2_gs; // отклонение глиссадной планки
+    float vhf1_cc; // потребление тока радиостанцией
+    float vhf2_cc; // потребление тока радиостанцией
+    float ark15_L_cc; // потребление тока АРК
+    float ark15_R_cc; // потребление тока АРК
+    float nav1_pow_cc; // потребление тока от КурсМП
+    float nav2_pow_cc; // потребление тока от КурсМП
+    float radar_cc; // потребление тока от РЛС Гроза
+    float rsbn_cc; // потребление тока от РСБН
     
 } radio_t;
