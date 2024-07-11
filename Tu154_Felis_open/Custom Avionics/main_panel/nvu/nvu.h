@@ -113,4 +113,4 @@ typedef struct {
     float s2_next_minus_cap; // digits cap
     float s2_next_plus_cap; // digits cap
 
-} acf_t;
+} nvu_t;
