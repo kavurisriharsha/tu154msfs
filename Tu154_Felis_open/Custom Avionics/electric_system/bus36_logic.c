@@ -5,8 +5,8 @@
 
 void update(acf_t * acf, swc_t * swc, fail_t * fail, elec_t * elec) {
     if (acf->frame_time > 0) {
-        int tr1_switch = swc->bus36_tr_left_to_right;
-        int tr2_switch = swc->bus36_tr_right_to_left;
+        int tr1_switch = swc->eng->bus36_tr_left_to_right;
+        int tr2_switch = swc->eng->bus36_tr_right_to_left;
         float tr1_volt = (elec->bus115_1_volt / 3.27) * (1 - fail->tr1_fail);
         float tr2_volt = (elec->bus115_1_volt / 3.27) * (1 - fail->tr2_fail);
         int bus_source_L = 0;
@@ -54,7 +54,7 @@ void update(acf_t * acf, swc_t * swc, fail_t * fail, elec_t * elec) {
 
         float pts_1_volt = 0;
 
-        if (bus27_R > 13 && (swc->pts250_mode == 1 || swc->agr_on == 1) && fail->pts250_1_fail == 0) {
+        if (bus27_R > 13 && (swc->eng->pts250_mode == 1 || swc->ovh->agr_on == 1) && fail->pts250_1_fail == 0) {
             pts_1_volt = 36;
             elec->bus36_pts1_work = 1;
         } else {
@@ -64,7 +64,7 @@ void update(acf_t * acf, swc_t * swc, fail_t * fail, elec_t * elec) {
 
         float pts_2_volt = 0;
 
-        if ((bus_L_volt < 30 || swc->pts250_mode == 1) && bus27_L > 13 && fail->pts250_2_fail == 0) {
+        if ((bus_L_volt < 30 || swc->eng->pts250_mode == 1) && bus27_L > 13 && fail->pts250_2_fail == 0) {
             pts_2_volt = 36;
             elec->bus36_pts2_work = 1;
         } else {

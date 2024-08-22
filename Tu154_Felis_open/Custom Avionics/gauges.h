@@ -12,7 +12,7 @@ typedef struct {
     gauges_alt_t* alt;
     gauges_compass_t* compass;
     gauges_console_t* console;
-    gauges_engines_t* engines;
+    gauges_engines_t* eng;
     gauges_fuel_t* fuel;
     gauges_hydro_t* hydro;
     gauges_misc_t* misc;
