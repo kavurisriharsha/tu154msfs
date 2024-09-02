@@ -121,7 +121,7 @@ end
 int fail_counter = 0;
 int check_time = 0; 
 
-void update(acf_t* acf, hydro_t* hydro, failures_t* failures) {
+void hydro_fails(acf_t* acf, hydro_t* hydro, failures_t* failures) {
     
 	check_time = 15 + rand() % 16;
 

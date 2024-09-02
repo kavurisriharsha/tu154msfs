@@ -3,6 +3,8 @@ typedef struct {
     int rel_genera0;
     int rel_genera1;
     int rel_genera2;
+    int rel_lbrakes;
+    int rel_rbrakes;
     int generator_on0;
     int generator_on1;
     int generator_on2;
